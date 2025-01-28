@@ -1,7 +1,3 @@
-/* eslint-disable react/prop-types */
-//Note:This component is slow to render
-
-// Define a function named `waitingforsomething` that takes one parameter `ms` (milliseconds).
 // This function creates a blocking delay by continuously running a loop for a specified time (`ms`).
 const waitingforsomething = (ms) => {
     const start = Date.now();
@@ -14,11 +10,11 @@ const waitingforsomething = (ms) => {
 }
 
 // React components are reusable pieces of UI that define what should be displayed on the screen.
-export default function Slowcomponent({time, custom, x}) {
+export default function AnotherSlowcomponent({children}) {
     // Call the `waitingforsomething` function and block the execution of this component
     // for 5000 milliseconds (5 seconds) before proceeding.
-    waitingforsomething(time[0]);
-    custom();
-    return  <>Incremented X: {x}   </>
+    waitingforsomething(1000);
+   
+    return <>Hello { children}</>;
         
 }
